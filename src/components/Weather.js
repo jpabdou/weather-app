@@ -21,7 +21,7 @@ export default function Weather(props){
         .catch(err=>console.log(err))
     },[link])
     return(
-        <div className="weather">
+        <div className="content">
             {search.city ? null : <h2 style={{color: "red"}}>Please go back to Home and select a city.</h2>}
             {forecast.length !==0 && forecast.map(period=>{
                 return(

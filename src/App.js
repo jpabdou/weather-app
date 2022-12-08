@@ -22,7 +22,9 @@ function App() {
           <Route path="/weather-app/weather" element={<Weather search={search} />} />
 
       </Routes>
-
+      <footer>
+      Location data courtesy of Geocodify API Web Service (https://geocodify.com/) and weather data courtesy of Weather.gov API Web Service (https://www.weather.gov/documentation/services-web-api).
+      </footer>
     </div>
 
   );

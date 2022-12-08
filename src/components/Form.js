@@ -11,7 +11,7 @@ export default function Form(props){
         setSearch({...search, city: search.searchTerm, searchTerm:""})
       }
     return(
-        <div className="form">
+        <div className="content">
             <form onSubmit={onSubmit}>
                 <label>
                 Type the U.S. city you want to search for the weather data here:
