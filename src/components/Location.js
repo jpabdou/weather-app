@@ -24,7 +24,7 @@ export default function Location(props){
                 if (city.properties.country_code === "US") {
                     return(
                         <div key={city.properties.id}>
-                        <Link onClick={()=>onClick(city.geometry.coordinates[0], city.geometry.coordinates[1], city.properties.label)} id="weather" to="/weather">{city.properties.label}</Link>
+                        <Link onClick={()=>onClick(city.geometry.coordinates[0], city.geometry.coordinates[1], city.properties.label)} id="weather" to="/weather-app/weather">{city.properties.label}</Link>
                         </div>
                 )
                 }
