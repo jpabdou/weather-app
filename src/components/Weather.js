@@ -3,7 +3,6 @@ import axios from "axios";
 
 export default function Weather(props) {
     let { search } = props
-    const [link, setLink] = useState("")
     const [forecast, setForecast] = useState("")
     useEffect(() => {
         axios.get(`https://api.weather.gov/points/${search.lat},${search.long}`)

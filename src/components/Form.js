@@ -14,7 +14,7 @@ export default function Form(props) {
         <div className="content">
             <form onSubmit={onSubmit}>
                 <label>
-                    Type the U.S. city you want to search for the weather data here:
+                    Type the U.S. city you want to search for the weather data here: <br></br>
                     <input type="text" name="searchTerm" placeholder='Type City Here' onChange={onChange} />
                 </label>
                 <button>Search for a U.S. city</button>
