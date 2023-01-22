@@ -33,3 +33,17 @@ html, body {
 .footer {
   flex-shrink: 0;
 }
+
+.period {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.period div {
+  width: 75%
+}
+
+.period img {
+  height: 100%;
+  object-fit:cover;
+}
