@@ -23,7 +23,7 @@ A weather app made with React and React-Router-Dom deployed through GitHub Pages
 
 <h2>Things to keep in mind</h2>
 <ul>
-<li>If you click the "Weather For Current City" link in the header and fail to navigate out of the Home page, you still need to click on or confirm a city choice. An easy way to determine if you have a city selected is by checking if the header title state "Weather for Any U.S. City" (no city selected) or the name of the city selected.
+<li>If you click the "Weather For Current City" link in the header and fail to navigate out of the Home page, you still need to click on or confirm a city choice. An easy way to determine if you have a city selected is by checking if the header title states "Weather for Any U.S. City" (no city selected) or the name of the city selected.
 
 <li>When you are typing in your city search, spelling is key. The search will not necessarily provide suitable search suggestions for incorrect spelling.
 <img src="/site-example-images/city with wrong spelling.jpg" alt="search results for New York spelled wrong on the homepage"/>
