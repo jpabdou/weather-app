@@ -6,13 +6,13 @@ import Weather from './components/Weather';
 import { Router, Routes, Route, Link } from "react-router-dom"
 
 function App() {
-  const [search, setSearch] = useState({ city: "", searchTerm: "", display: "", lat: null, long: null })
+  const [search, setSearch] = useState({ city: "", searchTerm: "", displayLoc: "", lat: null, long: null })
 
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Weather for {search.display ? search.display : "Any U.S. City!"}</h1>
+        <h1>Weather for {search.displayLoc ? search.displayLoc : "Any U.S. City!"}</h1>
         <Link style={{ color: "white" }} id="home" to="/weather-app">Home</Link>
         <Link style={{ color: "white" }} id="weather" to="/weather-app/weather">Weather For Current City</Link>
       </header>

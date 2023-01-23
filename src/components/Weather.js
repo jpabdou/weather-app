@@ -12,7 +12,7 @@ export default function Weather(props) {
                         setForecast(res.data.properties.periods)
                     })
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }, [])
 
     return (

@@ -8,14 +8,14 @@ export default function Location(props) {
     useEffect(() => {
         axios.get(`https://api.geocodify.com/v2/geocode?api_key=8ead09d05bca83da6d21f53fd892789458dfd88f&q=${search.city}`)
             .then(res => {
-                console.log(res.data.response)
                 setResults(res.data.response.features)
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }, [search.city])
     const onClick = (long, lat, displayLoc) => {
-        setSearch({ ...search, long: long, lat: lat, display: displayLoc })
+        setSearch({ ...search, long, lat, displayLoc })
     }
+
 
     return (
         <div className="content">
