@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Router, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export default function Location(props) {
     let { search, setSearch } = props

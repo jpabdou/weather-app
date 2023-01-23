@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Location from "./Location";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -17,13 +17,13 @@ export default function Form(props) {
 
     const onSubmitDirectLink = (evt) => {
         evt.preventDefault()
-        axios.get(`https://api.geocodify.com/v2/geocode?api_key=8ead09d05bca83da6d21f53fd892789458dfd88f&q=${search.searchTerm}`)
+        axios.get(`https://api.geocodify.com/v2/geocode?api_key=8ead09d05bca83da6d21f53fd892789458dfd88f&q=${search.city}`)
         .then(res => {
             let data = res.data.response.features[0]
             let long = data.geometry.coordinates[0]
             let lat = data.geometry.coordinates[1]
             let displayLoc = data.properties.label
-            setSearch({ ...search, city: search.searchTerm, long, lat, displayLoc, searchTerm: ""})
+            setSearch({ ...search, long, lat, displayLoc, searchTerm: ""})
             
             navigate("/weather-app/weather")
         })
@@ -40,12 +40,11 @@ export default function Form(props) {
                 <br></br>
                  <button>Search for a U.S. city</button>
             </form>
-            {search.city && <Location search={search} setSearch={setSearch} onChange={onChange} />}
-            <hr></hr>
+            {search.city && <Location search={search} setSearch={setSearch} />}
             <form onSubmit={onSubmitDirectLink}>
                 <label>
                     Or select one of the major U.S. cities in the dropdown menu to get the weather forecast: <br></br>
-                    <select name="searchTerm" onChange={onChange}>
+                    <select name="city" onChange={onChange}>
                         <option value="">Select City Here</option>
                         <option value="New York City">New York City, NY</option>
                         <option value="Chicago">Chicago, IL</option>

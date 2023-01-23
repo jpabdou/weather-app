@@ -26,24 +26,24 @@ html, body {
   flex: 1 0 auto;
 }
 
-.period {
-  border: 2px solid black
-}
-
 .footer {
   flex-shrink: 0;
 }
 
 .period {
+  border: 2px solid black;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
 }
 
 .period div {
-  width: 75%
+  width: 50%
 }
 
 .period img {
   height: 100%;
   object-fit:cover;
+  margin: 5px;
 }
