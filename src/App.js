@@ -3,11 +3,21 @@ import React, {useState} from 'react';
 import Form from './components/Form';
 import Weather from './components/Weather';
 
-import { Routes, Route, Link} from "react-router-dom"
+import { Routes, Navigate, Route, Link, Outlet} from "react-router-dom"
+
+
 
 function App() {
   const [search, setSearch] = useState({city:"", searchTerm:"", displayLoc: "", lat: null, long: null})
-
+  function RequireCity() {
+  
+    if (!search.city) {
+  
+      return <Navigate to="/weather-app" />;
+    }
+    return <Outlet />
+  }
+  
 
   return (
     <div className="App">
@@ -18,9 +28,9 @@ function App() {
       </header>
       <Routes>
           <Route path="/weather-app" element={<Form search={search} setSearch={setSearch}/>} />
-
+        <Route element={<RequireCity />}>
           <Route path="/weather-app/weather" element={<Weather search={search} />} />
-
+        </Route>
       </Routes>
       <footer>
       Location data courtesy of Geocodify API Web Service (https://geocodify.com/) and weather data courtesy of Weather.gov API Web Service (https://www.weather.gov/documentation/services-web-api).

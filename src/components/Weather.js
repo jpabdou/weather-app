@@ -13,7 +13,7 @@ export default function Weather(props) {
                     })
             })
             .catch(err => console.error(err))
-    }, [])
+    }, [search.lat, search.long])
 
     return (
         <div className="content">
@@ -21,7 +21,7 @@ export default function Weather(props) {
             {forecast.length !== 0 && forecast.map(period => {
                 return (
                     <div className="period" key={period.number}>
-                        <img src={period.icon} />
+                        <img src={period.icon} alt={`icon of the weather in viewed period of time, ${period.name}`}/>
                         <div>
                         <h3>Date: {period.startTime.split("T")[0]}</h3>
                         <h3>Period of Time: {period.name}</h3>

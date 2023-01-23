@@ -12,7 +12,10 @@ export default function Location(props) {
             })
             .catch(err => console.error(err))
     }, [search.city])
-    const onClick = (long, lat, displayLoc) => {
+    const onClick = (city) => {
+        let lat = city.geometry.coordinates[1]
+        let long = city.geometry.coordinates[0]
+        let displayLoc = city.properties.label
         setSearch({ ...search, long, lat, displayLoc })
     }
 
@@ -24,7 +27,7 @@ export default function Location(props) {
                 if (city.properties.country_code === "US") {
                     return (
                         <div key={city.properties.id}>
-                            <Link onClick={() => onClick(city.geometry.coordinates[0], city.geometry.coordinates[1], city.properties.label)} id="weather" to="/weather-app/weather">{city.properties.label}</Link>
+                            <Link onClick={() => onClick(city)} id="weather" to="/weather-app/weather">{city.properties.label}</Link>
                         </div>
                     )
                 }
