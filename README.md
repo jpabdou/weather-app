@@ -10,7 +10,7 @@ A weather app made with React and React-Router-Dom deployed through GitHub Pages
 <img src="/site-example-images/city input search.jpg" alt="form with a search for New York"/>
 
 <li>When you have typed in your city search, click on the "Search for a U.S. city" button to display the top city search results. Then, click on the city in search results to view the 14-day weather forecast for that city.
-<img src="/site-example-images/city search results.jpg" alt="search results for New York on the homepage"/>
+<img src="/site-example-images/city input search results.jpg" alt="search results for New York on the homepage"/>
 
 <li>Or instead of search for a particular city, you can use the dropdown input for several major U.S. cities and click the "Get weather forecast for a major U.S. City" button to immediately view the forecast for that city:
 <img src="/site-example-images/city dropdown search.jpg" alt="form with a dropdown selection for New York"/>
