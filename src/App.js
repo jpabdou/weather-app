@@ -13,7 +13,7 @@ function App() {
   
     if (!search.city) {
   
-      return <Navigate to="/weather-app" />;
+      return <Navigate to="/" />;
     }
     return <Outlet />
   }
@@ -23,13 +23,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Weather for {search.displayLoc.length ? search.displayLoc : "Any U.S. City!"}</h1>
-        <Link style={{color: "white"}} id="home" to="/weather-app">Home</Link>
-        <Link style={{color: "white"}} id="weather" to="/weather-app/weather">Weather For Current City</Link>
+        <Link style={{color: "white"}} id="home" to="/">Home</Link>
+        <Link style={{color: "white"}} id="weather" to="/weather">Weather For Current City</Link>
       </header>
       <Routes>
-          <Route path="/weather-app" element={<Form search={search} setSearch={setSearch}/>} />
+          <Route path="/" element={<Form search={search} setSearch={setSearch}/>} />
         <Route element={<RequireCity />}>
-          <Route path="/weather-app/weather" element={<Weather search={search} />} />
+          <Route path="/weather" element={<Weather search={search} />} />
         </Route>
       </Routes>
       <footer>
